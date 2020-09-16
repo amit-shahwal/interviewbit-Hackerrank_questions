@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+void kk(string );
+void kk(string str)
+{
+    map<char,int> freq;
+    for(int i=0;i<(int)str.size();i++)
+    {
+        freq[str[i]]++;
+
+
+    }
+        map<char,int> :: iterator it;
+ map<int,int> :: iterator it2;
+ //it is like a pointer variable
+ it=freq.begin();
+ char ch=it->first;
+ int maxt=it->second;
+    for (it=freq.begin();it!=freq.end();it++)
+    {
+        if(maxt<it->second){
+            maxt=it->second;
+            ch=it->first;
+        }
+    }
+       int maxk=maxt-1;
+      for (it=freq.begin();it!=freq.end();it++)
+    {
+        if(ch==it->first)
+            continue;
+        if(maxk==it->second)
+            continue;
+        else
+        {
+            cout<<"No";
+            return;
+
+        }
+
+    }
+    cout<<"Yes";
+
+
+
+}
+
+
+int main()
+{   //int a[1005];
+    string a[10000];
+    int n;
+  //syntax of map
+    cin>>n;
+    for (int i = 0; i < n ; i++)
+    {
+        /* code */
+        cin>>a[i];
+    }
+
+    for (int  i = 0; i < n; i++)
+    {
+       kk(a[i]);
+}
+
+    return 0;
+
+}

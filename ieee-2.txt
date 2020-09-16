@@ -1,0 +1,59 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+char str=' ';
+char str2='.';
+char str3=',';
+vector<char>kk;
+int flag=1;
+int flagd=1;
+int flagc=1;
+int main() {
+    string t;
+    getline(cin,t);
+    for(int i=0;i<(int)t.size();i++)
+    {
+
+            if(t[i]==' ')
+            {
+                if(flag==1)
+                {
+                    kk.push_back(t[i]);
+                    flag=0;
+
+                }
+            }
+      else  if(t[i]=='.')
+        {
+            if(flagd==1)
+            {
+                kk.push_back(t[i]);
+                flagd=0;
+                    flagc=0;
+            }
+        }   else  if(t[i]==',')
+        {
+           if(flagc==1)
+            {
+                kk.push_back(t[i]);
+                flagd=0;
+                    flagc=0;
+            }
+        }
+ else
+        {
+            kk.push_back(t[i]);
+            flag=1;
+            flagd=1;
+            flagc=1;
+        }
+
+    }
+    for(int k=0;k<(int)kk.size();k++)
+        cout<<kk[k];
+    return 0;
+}
