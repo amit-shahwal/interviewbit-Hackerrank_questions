@@ -4,6 +4,7 @@ using namespace std;
 #define foe(a, j, n) for (long long int a = j; a <= n; a++)
 #define ll long long int
 #define pb push_back
+
 #define max(a, b) (a < b ? b : a)
 #define min(a, b) ((a > b) ? b : a)
 vector<int> p[1000000];
@@ -53,7 +54,7 @@ int main()
         if (visited[k] == 0)
             bfs(k);
     }
-    int maxElementIndex = std::max_element(dis, dis + n) - dis;
+    int maxElementIndex = max_element(dis, dis + n) - dis;
     memset(dis, 0, sizeof(dis));
     memset(visited, 0, sizeof(visited));
 
